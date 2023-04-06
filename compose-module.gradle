@@ -5,7 +5,7 @@ apply plugin: 'kotlin-parcelize'
 
 android {
     compileSdk ProjectConfig.compileSdk
-
+    namespace project.name
     defaultConfig {
         minSdk ProjectConfig.minSdk
         targetSdk ProjectConfig.targetSdk
@@ -24,7 +24,9 @@ android {
     buildFeatures {
         compose true
     }
-
+    composeOptions{
+        kotlinCompilerExtensionVersion Compose.composeCompilerVersion
+    }
     compileOptions {
         coreLibraryDesugaringEnabled true
 
@@ -37,6 +39,16 @@ android {
 }
 
 dependencies {
+    implementation Compose.compiler
+    implementation Compose.ui
+    implementation Compose.uiToolingPreview
+    implementation Compose.hiltNavigationCompose
+    implementation Compose.material
+    implementation Compose.runtime
+    implementation Compose.navigation
+    implementation Compose.viewModelCompose
+    implementation Compose.activityCompose
+
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid
 
