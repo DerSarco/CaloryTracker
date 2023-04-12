@@ -14,6 +14,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.dersarco.core.domain.model.Gender
 import com.dersarco.core.util.UiEvent
 import com.dersarco.core_ui.LocalSpacing
+import com.dersarco.onboarding_presentation.components.ActionButton
 import com.dersarco.onboarding_presentation.components.SelectableButton
 import core.R
 
@@ -75,5 +76,10 @@ fun GenderScreen(
                 )
             }
         }
+        ActionButton(
+            modifier = Modifier.align(Alignment.BottomEnd),
+            text = stringResource(id = R.string.next),
+            onClick = viewModel::onNextClick,
+        )
     }
 }
