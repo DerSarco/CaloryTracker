@@ -14,6 +14,8 @@ import androidx.navigation.compose.rememberNavController
 import com.dersarco.core.navigation.Route
 import com.dersarco.onboarding_presentation.age.AgeScreen
 import com.dersarco.onboarding_presentation.gender.GenderScreen
+import com.dersarco.onboarding_presentation.height.HeightScreen
+import com.dersarco.onboarding_presentation.weight.WeightScreen
 import com.dersarco.onboarding_presentation.welcome.WelcomeScreen
 import com.plcoding.calorytracker.navigation.navigate
 import com.plcoding.calorytracker.ui.theme.CaloryTrackerTheme
@@ -48,8 +50,18 @@ class MainActivity : ComponentActivity() {
                                 onNavigate = navController::navigate
                             )
                         }
-                        composable(Route.HEIGHT) {}
-                        composable(Route.WEIGHT) {}
+                        composable(Route.HEIGHT) {
+                            HeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
+                        }
+                        composable(Route.WEIGHT) {
+                            WeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
+                        }
                         composable(Route.NUTRIENT_GOAL) {}
                         composable(Route.ACTIVITY) {}
                         composable(Route.GOAL) {}
