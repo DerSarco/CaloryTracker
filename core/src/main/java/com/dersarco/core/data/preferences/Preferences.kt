@@ -1,4 +1,4 @@
-package com.dersarco.core.domain.preferences
+package com.dersarco.core.data.preferences
 
 import com.dersarco.core.domain.model.ActivityLevel
 import com.dersarco.core.domain.model.Gender
@@ -19,6 +19,9 @@ interface Preferences {
 
     fun loadUserInfo(): UserInfo
 
+    fun saveShouldSHowOnboarding(shouldShow: Boolean)
+    fun loadShouldSHowOnboarding(): Boolean
+
     companion object {
         const val KEY_GENDER = "gender"
         const val KEY_AGE = "age"
@@ -29,6 +32,7 @@ interface Preferences {
         const val KEY_CARB_RATIO = "carb_ratio"
         const val KEY_PROTEIN_RATIO = "protein_ratio"
         const val KEY_FAT_RATIO = "fat_ratio"
+        const val KEY_SHOULD_SHOW_ONBORADING = "fat_ratio"
     }
 
 }

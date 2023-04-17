@@ -1,11 +1,10 @@
-package com.dersarco.core.domain
+package com.dersarco.core.data.preferences
 
 import android.content.SharedPreferences
 import com.dersarco.core.domain.model.ActivityLevel
 import com.dersarco.core.domain.model.Gender
 import com.dersarco.core.domain.model.GoalType
 import com.dersarco.core.domain.model.UserInfo
-import com.dersarco.core.domain.preferences.Preferences
 
 class DefaultPreferences(
     private val sharedPref: SharedPreferences
@@ -62,6 +61,14 @@ class DefaultPreferences(
         sharedPref.edit()
             .putFloat(Preferences.KEY_FAT_RATIO, ratio)
             .apply()
+    }
+
+    override fun saveShouldSHowOnboarding(shouldShow: Boolean) {
+        sharedPref.edit().putBoolean(Preferences.KEY_SHOULD_SHOW_ONBORADING, shouldShow).apply()
+    }
+
+    override fun loadShouldSHowOnboarding(): Boolean {
+        return sharedPref.getBoolean(Preferences.KEY_SHOULD_SHOW_ONBORADING, true)
     }
 
     override fun loadUserInfo(): UserInfo {

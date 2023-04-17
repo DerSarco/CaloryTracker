@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dersarco.core.domain.model.ActivityLevel
-import com.dersarco.core.domain.preferences.Preferences
+import com.dersarco.core.data.preferences.Preferences
 import com.dersarco.core.navigation.Route
 import com.dersarco.core.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel

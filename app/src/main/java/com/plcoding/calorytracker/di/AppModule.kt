@@ -3,8 +3,8 @@ package com.plcoding.calorytracker.di
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.dersarco.core.domain.DefaultPreferences
-import com.dersarco.core.domain.preferences.Preferences
+import com.dersarco.core.data.preferences.DefaultPreferences
+import com.dersarco.core.data.preferences.Preferences
 import com.dersarco.core.domain.use_case.FilterOutDigits
 import dagger.Module
 import dagger.Provides
