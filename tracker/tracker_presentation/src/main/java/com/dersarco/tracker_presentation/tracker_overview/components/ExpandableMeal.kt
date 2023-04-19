@@ -18,6 +18,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -42,7 +43,8 @@ fun ExpandableMeal(
         Row(modifier = Modifier
             .fillMaxWidth()
             .clickable { onToogleClick() }
-            .padding(spacing.spaceMedium)) {
+            .padding(spacing.spaceMedium),
+            verticalAlignment = Alignment.CenterVertically) {
             Image(
                 painter = painterResource(id = meal.drawableRes),
                 contentDescription = meal.name.asString(context)
@@ -109,10 +111,10 @@ fun ExpandableMeal(
                     }
                 }
             }
-            Spacer(modifier = Modifier.height(spacing.spaceMedium))
-            AnimatedVisibility(visible = meal.isExpanded) {
-                content()
-            }
+        }
+        Spacer(modifier = Modifier.height(spacing.spaceMedium))
+        AnimatedVisibility(visible = meal.isExpanded) {
+            content()
         }
     }
 }
