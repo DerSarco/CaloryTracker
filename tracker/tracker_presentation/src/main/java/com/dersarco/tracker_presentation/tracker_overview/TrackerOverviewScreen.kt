@@ -32,9 +32,9 @@ fun TrackerOverviewScreen(
     val state = viewModel.state
     val context = LocalContext.current
 
-    LaunchedEffect(key1 = true){
-        viewModel.uiEvent.collect{ event ->
-            when(event) {
+    LaunchedEffect(key1 = true) {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
                 is UiEvent.Navigate -> onNavigate(event)
                 else -> Unit
             }
@@ -77,16 +77,18 @@ fun TrackerOverviewScreen(
                             .padding(horizontal = spacing.spaceSmall)
                     ) {
                         state.trackedFoods.forEach { food ->
-                            TrackedFoodItem(
-                                trackedFoodItem = food,
-                                onDeleteClick = {
-                                    viewModel.onEvent(
-                                        TrackerOverviewEvent
-                                            .OnDeleteTrackedFoodClick(food)
-                                    )
-                                }
-                            )
-                            Spacer(modifier = Modifier.height(spacing.spaceMedium))
+                            if (food.mealType == meal.mealType) {
+                                TrackedFoodItem(
+                                    trackedFoodItem = food,
+                                    onDeleteClick = {
+                                        viewModel.onEvent(
+                                            TrackerOverviewEvent
+                                                .OnDeleteTrackedFoodClick(food)
+                                        )
+                                    }
+                                )
+                                Spacer(modifier = Modifier.height(spacing.spaceMedium))
+                            }
                         }
                         AddButton(
                             text = stringResource(
