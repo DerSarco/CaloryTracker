@@ -28,7 +28,7 @@ import com.dersarco.core_ui.LocalSpacing
 import com.dersarco.tracker_presentation.components.NutrientInfo
 import com.dersarco.tracker_presentation.components.UnitDisplay
 import com.dersarco.tracker_presentation.tracker_overview.Meal
-import tracker_presentation.R
+import core.R
 
 @Composable
 fun ExpandableMeal(

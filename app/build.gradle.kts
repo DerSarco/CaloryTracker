@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.Packaging
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -8,6 +10,7 @@ plugins {
 android {
     compileSdk = ProjectConfig.compileSdk
 
+    namespace = "com.plcoding.calorytracker"
     defaultConfig {
         applicationId = ProjectConfig.appId
         minSdk = ProjectConfig.minSdk
@@ -30,23 +33,22 @@ android {
         compose = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
     }
-    packagingOptions {
-        resources{
+     packaging {
+        resources {
             excludes += "META-INF/AL2.0"
             excludes += "META-INF/LGPL2.1"
             excludes += "**/attach_hotspot_windows.dll"
             excludes += "META-INF/licenses/ASM"
         }
-
     }
 }
 

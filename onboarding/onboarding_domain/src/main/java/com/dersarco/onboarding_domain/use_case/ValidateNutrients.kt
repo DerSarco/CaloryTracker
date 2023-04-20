@@ -1,7 +1,7 @@
 package com.dersarco.onboarding_domain.use_case
 
 import com.dersarco.core.util.UiText
-import onboarding_domain.R
+import core.R
 
 class ValidateNutrients {
 

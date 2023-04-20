@@ -26,7 +26,7 @@ import com.dersarco.core_ui.LocalSpacing
 import com.dersarco.core_ui.ProteinColor
 import com.dersarco.tracker_presentation.components.UnitDisplay
 import com.dersarco.tracker_presentation.tracker_overview.TrackerOverviewState
-import tracker_presentation.R
+import core.R
 
 @Composable
 fun NutrientsHeader(

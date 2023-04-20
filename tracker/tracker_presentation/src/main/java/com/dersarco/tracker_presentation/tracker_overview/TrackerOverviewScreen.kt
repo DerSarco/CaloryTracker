@@ -20,7 +20,7 @@ import com.dersarco.tracker_presentation.tracker_overview.components.DaySelector
 import com.dersarco.tracker_presentation.tracker_overview.components.ExpandableMeal
 import com.dersarco.tracker_presentation.tracker_overview.components.NutrientsHeader
 import com.dersarco.tracker_presentation.tracker_overview.components.TrackedFoodItem
-import tracker_presentation.R
+import core.R
 
 @Composable
 fun TrackerOverviewScreen(

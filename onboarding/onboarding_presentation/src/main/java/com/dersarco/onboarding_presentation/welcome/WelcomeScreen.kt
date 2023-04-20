@@ -12,7 +12,7 @@ import com.dersarco.core.navigation.Route
 import com.dersarco.core.util.UiEvent
 import com.dersarco.core_ui.LocalSpacing
 import com.dersarco.onboarding_presentation.components.ActionButton
-import onboarding_presentation.R
+import core.R
 
 @Composable
 fun WelcomeScreen(

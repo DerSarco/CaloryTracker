@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.dersarco.core_ui.LocalSpacing
-import tracker_presentation.R
+import core.R
 
 @Composable
 fun AddButton(

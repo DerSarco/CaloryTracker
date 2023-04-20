@@ -33,7 +33,7 @@ import coil.compose.rememberImagePainter
 import com.dersarco.core_ui.LocalSpacing
 import com.dersarco.tracker_domain.model.TrackedFood
 import com.dersarco.tracker_presentation.components.NutrientInfo
-import tracker_presentation.R
+import core.R
 
 @OptIn(ExperimentalCoilApi::class)
 @Composable
