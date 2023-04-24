@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dersarco.core.data.preferences.Preferences
 import com.dersarco.core.domain.use_case.FilterOutDigits
-import com.dersarco.core.navigation.Route
 import com.dersarco.core.util.UiEvent
 import com.dersarco.core.util.UiText
 import kotlinx.coroutines.channels.Channel
@@ -46,7 +45,7 @@ class AgeViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveAge(ageNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.HEIGHT))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

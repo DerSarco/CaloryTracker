@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dersarco.core.data.preferences.Preferences
-import com.dersarco.core.navigation.Route
 import com.dersarco.core.util.UiEvent
 import com.dersarco.core.util.UiText
 import kotlinx.coroutines.channels.Channel
@@ -44,7 +43,7 @@ class WeightViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveWeight(weightNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.ACTIVITY))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

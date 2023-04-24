@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dersarco.core.data.preferences.Preferences
 import com.dersarco.core.domain.use_case.FilterOutDigits
-import com.dersarco.core.navigation.Route
 import com.dersarco.core.util.UiEvent
 import com.dersarco.onboarding_domain.use_case.ValidateNutrients
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -58,7 +57,7 @@ class NutrientGoalViewModel @Inject constructor(
                         preferences.saveProteinRatio(result.proteinRatio)
                         preferences.saveFatRatio(result.fatRatio)
                         viewModelScope.launch {
-                            _uiEvent.send(UiEvent.Navigate(Route.TRACKER_OVERVIEW))
+                            _uiEvent.send(UiEvent.Success)
                         }
                     }
                     is ValidateNutrients.Result.Error -> {
